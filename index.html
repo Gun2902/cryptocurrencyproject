@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Prediction Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cryptocurrency Price Prediction</h1>
+        <label for="crypto">Select Cryptocurrency:</label>
+        <select id="crypto">
+            <option value="bitcoin">Bitcoin</option>
+            <option value="ethereum">Ethereum</option>
+            <option value="litecoin">Litecoin</option>
+            <!-- Add more options as desired -->
+        </select>
+        
+        <button id="fetchPrice">Fetch Current Price</button>
+        <div class="price-info">
+            <h2>Current Price: <span id="currentPrice">--</span></h2>
+            <h2>Predicted Price: <span id="predictedPrice">--</span></h2>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+<div class="containerr">
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    
+    <h2>Crypto Prediction Dashboard</h2>
+
+    <!-- Real-Time Price Tracker -->
+    <h3>Real-Time Price Tracker</h3>
+    <select id="cryptoSelector" class="dropdown" onchange="updateChart()">
+        <option value="bitcoin">Bitcoin</option>
+        <option value="ethereum">Ethereum</option>
+        <option value="litecoin">Litecoin</option>
+    </select>
+    <div class="chart-containerr">
+        <canvas id="priceChart"></canvas>
+    </div>
+
+    <!-- Prediction Alerts -->
+    <h3>Custom Alerts</h3>
+    <input type="number" id="alertPrice" placeholder="Alert Price (USD)" />
+    <button onclick="setAlert()">Set Alert</button>
+    <p id="alertMessage"></p>
+
+    <!-- News Feed -->
+    <h3>News Feed</h3>
+    <ul id="newsFeed">Loading news...</ul>
+
+    <!-- Sentiment Analysis -->
+    <h3>Sentiment Analysis</h3>
+    <p id="sentiment">Loading sentiment...</p>
+
+    <!-- Portfolio Management -->
+    <h3>Portfolio Management</h3>
+    <input type="text" id="portfolioCrypto" class="portfolio-input" placeholder="Crypto (e.g., BTC)" />
+    <input type="number" id="portfolioAmount" class="portfolio-input" placeholder="Amount" />
+    <button onclick="addToPortfolio()">Add to Portfolio</button>
+    <ul id="portfolioList"></ul>
+
+    <!-- Risk Score Indicator -->
+    <h3>Risk Score Indicator</h3>
+    <p id="riskIndicator">Calculating risk...</p>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/technicalindicators@3.0.2/dist/browser.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
